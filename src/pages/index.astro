@@ -1,6 +1,6 @@
 ---
 const channelId = "UC_x5XG1OV2P6uZZ5FSM9Ttw";
-const apiKey = import.meta.env.YOUTUBE_API_KEY;
+const apiKey = import.meta.env.PUBLIC_YOUTUBE_API_KEY;
 
 const apiUrl = `https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=${channelId}&key=${apiKey}`;
 const res = await fetch(apiUrl);
@@ -12,7 +12,7 @@ if (!channel) {
 }
 
 console.log("YOUTUBE_API_KEY:", import.meta.env.YOUTUBE_API_KEY);
-const keyExists = !!import.meta.env.YOUTUBE_API_KEY;
+const keyExists = !!import.meta.env.PUBLIC_YOUTUBE_API_KEY;
 ---
 
 <html lang="en">
@@ -29,6 +29,6 @@ const keyExists = !!import.meta.env.YOUTUBE_API_KEY;
         </>
       )
     }
-    <p>API Key is {keyExists ? 'Present' : 'Missing'}</p>
+    <p>API Key is {keyExists ? "Present" : "Missing"}</p>
   </body>
 </html>
